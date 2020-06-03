@@ -6,3 +6,6 @@ app.use((req,res,next)=>{
         message:"I am making Restful API"
     })
 })
+
+
+module.exports = app
