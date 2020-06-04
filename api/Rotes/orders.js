@@ -7,8 +7,12 @@ routes.get("/",(req,res,next)=>{
     });
 });
 routes.post("/",(req,res,next)=>{
+    const productId = req.body.productId;
+    const name = req.body.name;
     res.status(200).send({
-        message:"Orders with post method"
+        message:"Orders with post method",
+        productId,
+        name
     });
 });
 routes.get("/:id",(req,res,next)=>{

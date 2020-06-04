@@ -1,14 +1,20 @@
 const express = require("express");
 const routes = express.Router();
 
+
 routes.get("/",(req,res,next)=>{
     res.status(200).send({
         message:"Products with get method"
     });
 });
 routes.post("/",(req,res,next)=>{
+    const name = req.body.name;
+    const course = req.body.course;
+
     res.status(200).send({
-        message:"Products with post method"
+        message:"Products with post method",
+        name:name,
+        course:course
     });
 });
 routes.get("/:id",(req,res,next)=>{
