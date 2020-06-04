@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 
-app.use((req,res,next)=>{
-    res.status(200).json({
-        message:"I am making Restful API"
-    })
-})
+const productsRoute = require('./api/Rotes/products')
+const ordersRoute = require('./api/Rotes/orders')
+
+app.use("/products" , productsRoute);
+app.use("/orders" , ordersRoute);
 
 
 module.exports = app
